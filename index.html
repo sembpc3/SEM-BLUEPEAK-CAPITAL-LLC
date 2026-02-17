@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="SEM BluePeak Capital, LLC — Real estate investment. We invest with vision. We build with purpose." />
+  <meta name="theme-color" content="#02284D" />
+  <title>SEM BluePeak Capital, LLC</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="SEM BluePeak Capital, LLC" />
+  <meta property="og:description" content="We invest with vision. We build with purpose." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root{
+      /* Colores tomados del logo (aprox.) */
+      --navy:#02284D;          /* azul profundo */
+      --navy2:#0B1F3A;
+      --sky:#53748E;           /* azul medio */
+      --gold:#D8B45A;          /* acento elegante (opcional) */
+      --ivory:#F4F1EC;         /* fondo marfil */
+      --text:#EAF1FF;
+      --muted:#A8B6D6;
+      --line:rgba(255,255,255,.10);
+      --shadow: 0 24px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+      --max: 1120px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--text);
+      background:
+        radial-gradient(900px 520px at 15% 10%, rgba(83,116,142,.20), transparent 55%),
+        radial-gradient(900px 520px at 90% 15%, rgba(216,180,90,.16), transparent 55%),
+        linear-gradient(180deg, #040B16, #050E1B 60%, #040B16);
+      overflow-x:hidden;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--max); margin:0 auto; padding:0 20px}
+
+    /* Topbar */
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(4, 11, 22, .62);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:12px;
+    }
+    .brand{
+      display:flex; gap:12px; align-items:center;
+      min-width:260px;
+    }
+    .brand img{
+      width:46px; height:46px; border-radius:14px;
+      object-fit:contain;
+      background: rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.10);
+      padding:6px;
+    }
+    .brand h1{font-size:14px; margin:0; font-weight:750; letter-spacing:.2px}
+    .brand p{margin:0; font-size:12px; color:var(--muted)}
+
+    .navlinks{
+      display:flex; gap:14px; align-items:center; flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .navlinks a{
+      font-size:13px;
+      color:var(--muted);
+      padding:8px 10px;
+      border-radius:10px;
+      border:1px solid transparent;
+    }
+    .navlinks a:hover{
+      color:var(--text);
+      border-color: var(--line);
+      background: rgba(255,255,255,.03);
+    }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius:12px;
+      border:1px solid rgba(216,180,90,.35);
+      background: linear-gradient(180deg, rgba(216,180,90,.22), rgba(216,180,90,.08));
+      color:var(--text);
+      font-weight:700;
+      font-size:13px;
+      cursor:pointer;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .btn:hover{border-color: rgba(216,180,90,.55)}
+    .btn.secondary{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      box-shadow:none;
+    }
+
+    /* Hero */
+    header.hero{padding:56px 0 18px}
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(11,31,58,.88), rgba(10,24,48,.68));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .cardInner{padding:26px}
+
+    .badge{
+      display:inline-flex; gap:8px; align-items:center;
+      font-size:12px;
+      color:var(--muted);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      padding:7px 10px;
+      border-radius:999px;
+      margin-bottom:14px;
+    }
+    .dot{
+      width:8px; height:8px; border-radius:99px;
+      background: var(--gold);
+      box-shadow: 0 0 0 4px rgba(216,180,90,.12);
+    }
+    .headline{
+      font-size:40px;
+      margin:0 0 10px;
+      line-height:1.06;
+      letter-spacing:-.7px;
+    }
+    .headline span{
+      background: linear-gradient(90deg, #F1D58B, var(--gold));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .sub{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:15px;
+      max-width: 66ch;
+    }
+    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; margin-top:14px}
+
+    .mini{
+      display:flex; gap:14px; flex-wrap:wrap; margin-top:18px;
+      padding-top:16px;
+      border-top:1px solid var(--line);
+    }
+    .kpi{
+      flex:1; min-width:160px;
+      padding:12px;
+      border:1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255,255,255,.03);
+    }
+    .kpi b{display:block; font-size:13px}
+    .kpi small{color:var(--muted)}
+
+    .list{display:flex; flex-direction:column; gap:10px; margin-top:10px}
+    .item{
+      display:flex; gap:12px; align-items:flex-start;
+      padding:12px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background: rgba(255,255,255,.03);
+    }
+    .icon{
+      width:34px; height:34px; border-radius:12px;
+      background: rgba(83,116,142,.22);
+      border:1px solid rgba(83,116,142,.35);
+      display:grid; place-items:center;
+      flex:0 0 auto;
+      margin-top:1px;
+    }
+    .item b{display:block; font-size:13px}
+    .item span{display:block; color:var(--muted); font-size:13px; margin-top:2px}
+
+    /* Sections */
+    section{padding:26px 0}
+    .sectionTitle{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap:18px;
+      margin-bottom:14px;
+    }
+    h2{margin:0; font-size:20px; letter-spacing:-.2px}
+    .hint{margin:0; color:var(--muted); font-size:13px; max-width: 66ch}
+
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    .panel{
+      padding:18px;
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.03);
+    }
+    .panel h3{margin:0 0 6px; font-size:15px}
+    .panel p{margin:0; color:var(--muted); font-size:13px}
+
+    .steps{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:12px;
+    }
+    .step{
+      padding:16px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      position:relative;
+      overflow:hidden;
+    }
+    .step:before{
+      content:"";
+      position:absolute; left:-30px; top:-30px;
+      width:120px; height:120px; border-radius:999px;
+      background: rgba(83,116,142,.20);
+      filter: blur(1px);
+    }
+    .step .n{
+      display:inline-flex;
+      width:26px; height:26px;
+      border-radius:9px;
+      border:1px solid rgba(216,180,90,.35);
+      background: rgba(216,180,90,.14);
+      align-items:center; justify-content:center;
+      font-size:12px;
+      margin-bottom:10px;
+      font-weight:800;
+    }
+    .step b{display:block; font-size:14px; margin-bottom:6px}
+    .step p{margin:0; color:var(--muted); font-size:13px}
+
+    .split{display:grid; grid-template-columns: 1fr 1fr; gap:14px}
+
+    /* Contact */
+    .contact{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:14px;
+    }
+    .formRow{display:grid; grid-template-columns: 1fr 1fr; gap:10px}
+    label{display:block; font-size:12px; color:var(--muted); margin:10px 0 6px}
+    input, textarea, select{
+      width:100%;
+      background: rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:12px 12px;
+      color:var(--text);
+      outline:none;
+      font-size:13px;
+    }
+    textarea{min-height:120px; resize:vertical}
+    input:focus, textarea:focus, select:focus{
+      border-color: rgba(216,180,90,.5);
+      box-shadow: 0 0 0 4px rgba(216,180,90,.12);
+    }
+    .fine{font-size:12px; color: var(--muted); margin-top:10px}
+
+    footer{
+      padding:22px 0 36px;
+      color: var(--muted);
+      border-top:1px solid var(--line);
+      margin-top:18px;
+    }
+    .foot{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; align-items:center}
+    .pill{
+      padding:8px 10px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background: rgba(255,255,255,.03);
+      font-size:12px;
+    }
+
+    /* Responsive */
+    @media (max-width: 940px){
+      .heroGrid{grid-template-columns:1fr}
+      .grid3{grid-template-columns:1fr}
+      .steps{grid-template-columns:1fr 1fr}
+      .split{grid-template-columns:1fr}
+      .contact{grid-template-columns:1fr}
+      .headline{font-size:32px}
+      .brand{min-width:auto}
+    }
+    @media (max-width: 520px){
+      .steps{grid-template-columns:1fr}
+      .formRow{grid-template-columns:1fr}
+      .navlinks{display:none}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="container">
+      <div class="nav">
+        <div class="brand">
+          <!-- cache-bust simple: ?v=1 (si no se actualiza, cambia el número) -->
+          <img src="assets/logo-sembpc.png?v=1" alt="SEM BluePeak Capital logo" />
+          <div>
+            <h1>SEM BluePeak Capital, LLC</h1>
+            <p data-i18n="nav_sub">Real Estate Investment & Asset Management</p>
+          </div>
+        </div>
+
+        <div class="navlinks" aria-label="Navegación principal">
+          <a href="#about" data-i18n="nav_about">Compañía</a>
+          <a href="#services" data-i18n="nav_services">Servicios</a>
+          <a href="#strategy" data-i18n="nav_strategy">Estrategia</a>
+          <a href="#governance" data-i18n="nav_governance">Gobierno</a>
+          <a href="#contact" data-i18n="nav_contact">Contacto</a>
+        </div>
+
+        <div style="display:flex; gap:10px; align-items:center;">
+          <button class="btn secondary" id="langBtn" type="button" title="Cambiar idioma">ES / EN</button>
+          <a class="btn" href="#contact" data-i18n="nav_cta">Agendar conversación</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <div class="heroGrid">
+        <div class="card">
+          <div class="cardInner">
+            <div class="badge"><span class="dot"></span> <span data-i18n="hero_badge">Enfoque institucional, disciplina financiera y ejecución.</span></div>
+
+            <h1 class="headline" data-i18n="hero_title">
+              We invest with <span>vision</span>. We build with <span>purpose</span>.
+            </h1>
+
+            <p class="sub" data-i18n="hero_sub">
+              SEM BluePeak Capital, LLC es una plataforma enfocada en adquisición, desarrollo y gestión de activos inmobiliarios.
+              Diseñamos estructuras claras, control operativo y reporting para inversionistas y aliados.
+            </p>
+
+            <div class="ctaRow">
+              <a class="btn" href="#services" data-i18n="cta_primary">Ver servicios</a>
+              <a class="btn secondary" href="#strategy" data-i18n="cta_secondary">Conocer estrategia</a>
+            </div>
+
+            <div class="mini">
+              <div class="kpi">
+                <b data-i18n="kpi1_title">Enfoque</b>
+                <small data-i18n="kpi1_sub">Real estate: compra, desarrollo y gestión</small>
+              </div>
+              <div class="kpi">
+                <b data-i18n="kpi2_title">Disciplina</b>
+                <small data-i18n="kpi2_sub">Riesgo, compliance y control financiero</small>
+              </div>
+              <div class="kpi">
+                <b data-i18n="kpi3_title">Transparencia</b>
+                <small data-i18n="kpi3_sub">KPIs y reporting para inversionistas</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="card">
+          <div class="cardInner">
+            <h2 style="margin:0 0 8px" data-i18n="quick_title">Qué hacemos</h2>
+            <p class="hint" style="margin:0 0 12px" data-i18n="quick_sub">
+              Un enfoque institucional: estrategia, ejecución y reportes.
+            </p>
+
+            <div class="list">
+              <div class="item">
+                <div class="icon">🏙️</div>
+                <div>
+                  <b data-i18n="q1_title">Adquisición y análisis</b>
+                  <span data-i18n="q1_sub">Underwriting, estructura y cierre eficiente.</span>
+                </div>
+              </div>
+              <div class="item">
+                <div class="icon">🧱</div>
+                <div>
+                  <b data-i18n="q2_title">Desarrollo</b>
+                  <span data-i18n="q2_sub">Planificación, presupuesto, proveedores y control.</span>
+                </div>
+              </div>
+              <div class="item">
+                <div class="icon">📊</div>
+                <div>
+                  <b data-i18n="q3_title">Gestión de activos</b>
+                  <span data-i18n="q3_sub">Operación, CAPEX/OPEX, KPIs y optimización.</span>
+                </div>
+              </div>
+              <div class="item">
+                <div class="icon">🤝</div>
+                <div>
+                  <b data-i18n="q4_title">Investor Relations</b>
+                  <span data-i18n="q4_sub">Informes, trazabilidad y alineación de intereses.</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top:14px; padding-top:14px; border-top:1px solid var(--line); color:var(--muted); font-size:12px;">
+              <span data-i18n="disclaimer_top">Nota: Este sitio es informativo y no constituye oferta de valores.</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="sectionTitle">
+        <h2 data-i18n="about_title">Compañía</h2>
+        <p class="hint" data-i18n="about_sub">Una plataforma para estructurar, ejecutar y escalar inversiones inmobiliarias con gobierno corporativo.</p>
+      </div>
+
+      <div class="split">
+        <div class="panel">
+          <h3 data-i18n="mission_title">Misión</h3>
+          <p data-i18n="mission_text">Invertir en activos inmobiliarios con visión estratégica, construyendo valor sostenible mediante ejecución disciplinada, control operativo y gestión financiera rigurosa.</p>
+        </div>
+        <div class="panel">
+          <h3 data-i18n="vision_title">Visión</h3>
+          <p data-i18n="vision_text">Ser una firma referente por calidad de procesos, transparencia y creación de valor en real estate, integrando aliados y capital con propósito.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="sectionTitle">
+        <h2 data-i18n="services_title">Servicios</h2>
+        <p class="hint" data-i18n="services_sub">Estructuramos y operamos el ciclo completo: desde el análisis hasta la gestión y reportes.</p>
+      </div>
+
+      <div class="grid3">
+        <div class="panel">
+          <h3 data-i18n="s1_title">Portfolio Management</h3>
+          <p data-i18n="s1_text">Selección de activos, diversificación, métricas y optimización del portafolio.</p>
+        </div>
+        <div class="panel">
+          <h3 data-i18n="s2_title">Investment Advisory</h3>
+          <p data-i18n="s2_text">Modelos, escenarios, sensibilidad, estructura de capital y análisis de riesgo.</p>
+        </div>
+        <div class="panel">
+          <h3 data-i18n="s3_title">Asset Management</h3>
+          <p data-i18n="s3_text">Gestión operativa, KPIs, control de costos, CAPEX/OPEX y mejora continua.</p>
+        </div>
+
+        <div class="panel">
+          <h3 data-i18n="s4_title">Acquisition & Close</h3>
+          <p data-i18n="s4_text">Due diligence, negociación, coordinación legal y cierre eficiente.</p>
+        </div>
+        <div class="panel">
+          <h3 data-i18n="s5_title">Development</h3>
+          <p data-i18n="s5_text">Planeación, presupuesto, contratación de proveedores y control del proyecto.</p>
+        </div>
+        <div class="panel">
+          <h3 data-i18n="s6_title">Reporting & Investor Relations</h3>
+          <p data-i18n="s6_text">Informes periódicos, tableros, trazabilidad y transparencia para inversionistas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRATEGY -->
+  <section id="strategy">
+    <div class="container">
+      <div class="sectionTitle">
+        <h2 data-i18n="strategy_title">Estrategia de inversión</h2>
+        <p class="hint" data-i18n="strategy_sub">Priorizamos claridad, control y ejecución. La estrategia se adapta al activo y al ciclo del mercado.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="n">1</div>
+          <b data-i18n="st1_title">Tesis del activo</b>
+          <p data-i18n="st1_text">Ubicación, demanda, drivers de valor, salida y margen de seguridad.</p>
+        </div>
+        <div class="step">
+          <div class="n">2</div>
+          <b data-i18n="st2_title">Estructura</b>
+          <p data-i18n="st2_text">Capital, deuda, cronograma, contingencias y gobierno corporativo.</p>
+        </div>
+        <div class="step">
+          <div class="n">3</div>
+          <b data-i18n="st3_title">Ejecución</b>
+          <p data-i18n="st3_text">Plan operativo, proveedores, control de costos y control de avances.</p>
+        </div>
+        <div class="step">
+          <div class="n">4</div>
+          <b data-i18n="st4_title">Reporting</b>
+          <p data-i18n="st4_text">KPIs, informes, trazabilidad y comunicación con inversionistas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GOVERNANCE -->
+  <section id="governance">
+    <div class="container">
+      <div class="sectionTitle">
+        <h2 data-i18n="gov_title">Gobierno corporativo</h2>
+        <p class="hint" data-i18n="gov_sub">Buenas prácticas para operar con orden, cumplimiento y claridad hacia aliados e inversionistas.</p>
+      </div>
+
+      <div class="split">
+        <div class="panel">
+          <h3 data-i18n="gov1_title">Cumplimiento y control</h3>
+          <p data-i18n="gov1_text">Procesos claros, documentación, segregación de funciones y controles de aprobación.</p>
+        </div>
+        <div class="panel">
+          <h3 data-i18n="gov2_title">Gestión financiera</h3>
+          <p data-i18n="gov2_text">Presupuestos, control OPEX/CAPEX, seguimiento a KPIs y reporte periódico.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="sectionTitle">
+        <h2 data-i18n="contact_title">Contacto</h2>
+        <p class="hint" data-i18n="contact_sub">Cuéntanos qué estás buscando y te respondemos con un enfoque claro y ejecutivo.</p>
+      </div>
+
+      <div class="contact">
+        <div class="panel">
+          <form onsubmit="return false;">
+            <div class="formRow">
+              <div>
+                <label data-i18n="f_name">Nombre</label>
+                <input type="text" placeholder="Tu nombre" />
+              </div>
+              <div>
+                <label data-i18n="f_email">Correo</label>
+                <input type="email" placeholder="tu@email.com" />
+              </div>
+            </div>
+
+            <label data-i18n="f_topic">Motivo</label>
+            <select>
+              <option data-i18n="opt1">Inversionista / Partnership</option>
+              <option data-i18n="opt2">Proyecto inmobiliario</option>
+              <option data-i18n="opt3">Servicios / Advisory</option>
+              <option data-i18n="opt4">Otro</option>
+            </select>
+
+            <label data-i18n="f_msg">Mensaje</label>
+            <textarea placeholder="Describe brevemente tu necesidad..."></textarea>
+
+            <div class="ctaRow" style="margin-top:12px;">
+              <a class="btn" href="mailto:ceo@sembpc.com?subject=Contacto%20Web%20SEM%20BluePeak%20Capital" data-i18n="send_email">Enviar por correo</a>
+              <a class="btn secondary" href="tel:+19546158737" data-i18n="call_now">Llamar ahora</a>
+            </div>
+
+            <div class="fine" data-i18n="contact_note">
+              *Este formulario es informativo. Para contacto directo usa el botón de correo.
+            </div>
+          </form>
+        </div>
+
+        <div class="panel">
+          <h3 data-i18n="direct_title">Contacto directo</h3>
+          <p style="margin:0; color:var(--muted); font-size:13px" data-i18n="direct_sub">
+            Respuesta ejecutiva vía correo. Si prefieres llamada, agenda por teléfono.
+          </p>
+
+          <div style="margin-top:12px; display:flex; flex-direction:column; gap:10px;">
+            <div class="item">
+              <div class="icon">📞</div>
+              <div>
+                <b data-i18n="phone_title">Teléfono</b>
+                <span><a href="tel:+19546158737">+1 954 615 8737</a></span>
+              </div>
+            </div>
+            <div class="item">
+              <div class="icon">✉️</div>
+              <div>
+                <b data-i18n="email_title">Correo</b>
+                <span><a href="mailto:ceo@sembpc.com">ceo@sembpc.com</a></span>
+              </div>
+            </div>
+            <div class="item">
+              <div class="icon">🏢</div>
+              <div>
+                <b data-i18n="entity_title">Entidad</b>
+                <span>SEM BluePeak Capital, LLC</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:14px; padding-top:14px; border-top:1px solid var(--line); color:var(--muted); font-size:12px;">
+            <span data-i18n="disclaimer_bottom">
+              Disclaimer: La información presentada es de carácter general y no constituye oferta, asesoría legal o recomendación de inversión.
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div class="pill">© <span id="y"></span> SEM BluePeak Capital, LLC</div>
+        <div class="pill">Phone: <a href="tel:+19546158737">+1 954 615 8737</a> · Email: <a href="mailto:ceo@sembpc.com">ceo@sembpc.com</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Año footer
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Textos ES/EN
+    const dict = {
+      es: {
+        nav_sub: "Real Estate Investment & Asset Management",
+        nav_about: "Compañía",
+        nav_services: "Servicios",
+        nav_strategy: "Estrategia",
+        nav_governance: "Gobierno",
+        nav_contact: "Contacto",
+        nav_cta: "Agendar conversación",
+
+        hero_badge: "Enfoque institucional, disciplina financiera y ejecución.",
+        hero_title: "We invest with <span>vision</span>. We build with <span>purpose</span>.",
+        hero_sub: "SEM BluePeak Capital, LLC es una plataforma enfocada en adquisición, desarrollo y gestión de activos inmobiliarios. Diseñamos estructuras claras, control operativo y reporting para inversionistas y aliados.",
+        cta_primary: "Ver servicios",
+        cta_secondary: "Conocer estrategia",
+        kpi1_title: "Enfoque",
+        kpi1_sub: "Real estate: compra, desarrollo y gestión",
+        kpi2_title: "Disciplina",
+        kpi2_sub: "Riesgo, compliance y control financiero",
+        kpi3_title: "Transparencia",
+        kpi3_sub: "KPIs y reporting para inversionistas",
+
+        quick_title: "Qué hacemos",
+        quick_sub: "Un enfoque institucional: estrategia, ejecución y reportes.",
+        q1_title: "Adquisición y análisis",
+        q1_sub: "Underwriting, estructura y cierre eficiente.",
+        q2_title: "Desarrollo",
+        q2_sub: "Planificación, presupuesto, proveedores y control.",
+        q3_title: "Gestión de activos",
+        q3_sub: "Operación, CAPEX/OPEX, KPIs y optimización.",
+        q4_title: "Investor Relations",
+        q4_sub: "Informes, trazabilidad y alineación de intereses.",
+        disclaimer_top: "Nota: Este sitio es informativo y no constituye oferta de valores.",
+
+        about_title: "Compañía",
+        about_sub: "Una plataforma para estructurar, ejecutar y escalar inversiones inmobiliarias con gobierno corporativo.",
+        mission_title: "Misión",
+        mission_text: "Invertir en activos inmobiliarios con visión estratégica, construyendo valor sostenible mediante ejecución disciplinada, control operativo y gestión financiera rigurosa.",
+        vision_title: "Visión",
+        vision_text: "Ser una firma referente por calidad de procesos, transparencia y creación de valor en real estate, integrando aliados y capital con propósito.",
+
+        services_title: "Servicios",
+        services_sub: "Estructuramos y operamos el ciclo completo: desde el análisis hasta la gestión y reportes.",
+        s1_title: "Portfolio Management",
+        s1_text: "Selección de activos, diversificación, métricas y optimización del portafolio.",
+        s2_title: "Investment Advisory",
+        s2_text: "Modelos, escenarios, sensibilidad, estructura de capital y análisis de riesgo.",
+        s3_title: "Asset Management",
+        s3_text: "Gestión operativa, KPIs, control de costos, CAPEX/OPEX y mejora continua.",
+        s4_title: "Acquisition & Close",
+        s4_text: "Due diligence, negociación, coordinación legal y cierre eficiente.",
+        s5_title: "Development",
+        s5_text: "Planeación, presupuesto, contratación de proveedores y control del proyecto.",
+        s6_title: "Reporting & Investor Relations",
+        s6_text: "Informes periódicos, tableros, trazabilidad y transparencia para inversionistas.",
+
+        strategy_title: "Estrategia de inversión",
+        strategy_sub: "Priorizamos claridad, control y ejecución. La estrategia se adapta al activo y al ciclo del mercado.",
+        st1_title: "Tesis del activo",
+        st1_text: "Ubicación, demanda, drivers de valor, salida y margen de seguridad.",
+        st2_title: "Estructura",
+        st2_text: "Capital, deuda, cronograma, contingencias y gobierno corporativo.",
+        st3_title: "Ejecución",
+        st3_text: "Plan operativo, proveedores, control de costos y control de avances.",
+        st4_title: "Reporting",
+        st4_text: "KPIs, informes, trazabilidad y comunicación con inversionistas.",
+
+        gov_title: "Gobierno corporativo",
+        gov_sub: "Buenas prácticas para operar con orden, cumplimiento y claridad hacia aliados e inversionistas.",
+        gov1_title: "Cumplimiento y control",
+        gov1_text: "Procesos claros, documentación, segregación de funciones y controles de aprobación.",
+        gov2_title: "Gestión financiera",
+        gov2_text: "Presupuestos, control OPEX/CAPEX, seguimiento a KPIs y reporte periódico.",
+
+        contact_title: "Contacto",
+        contact_sub: "Cuéntanos qué estás buscando y te respondemos con un enfoque claro y ejecutivo.",
+        f_name: "Nombre",
+        f_email: "Correo",
+        f_topic: "Motivo",
+        opt1: "Inversionista / Partnership",
+        opt2: "Proyecto inmobiliario",
+        opt3: "Servicios / Advisory",
+        opt4: "Otro",
+        f_msg: "Mensaje",
+        send_email: "Enviar por correo",
+        call_now: "Llamar ahora",
+        contact_note: "*Este formulario es informativo. Para contacto directo usa el botón de correo.",
+
+        direct_title: "Contacto directo",
+        direct_sub: "Respuesta ejecutiva vía correo. Si prefieres llamada, agenda por teléfono.",
+        phone_title: "Teléfono",
+        email_title: "Correo",
+        entity_title: "Entidad",
+        disclaimer_bottom: "Disclaimer: La información presentada es de carácter general y no constituye oferta, asesoría legal o recomendación de inversión."
+      },
+
+      en: {
+        nav_sub: "Real Estate Investment & Asset Management",
+        nav_about: "Company",
+        nav_services: "Services",
+        nav_strategy: "Strategy",
+        nav_governance: "Governance",
+        nav_contact: "Contact",
+        nav_cta: "Schedule a call",
+
+        hero_badge: "Institutional mindset, financial discipline, and execution.",
+        hero_title: "We invest with <span>vision</span>. We build with <span>purpose</span>.",
+        hero_sub: "SEM BluePeak Capital, LLC is focused on real estate acquisition, development, and asset management. We build clear structures, operational control, and investor-ready reporting.",
+        cta_primary: "View services",
+        cta_secondary: "Our strategy",
+        kpi1_title: "Focus",
+        kpi1_sub: "Real estate: acquire, develop, manage",
+        kpi2_title: "Discipline",
+        kpi2_sub: "Risk, compliance, financial control",
+        kpi3_title: "Transparency",
+        kpi3_sub: "KPIs and investor reporting",
+
+        quick_title: "What we do",
+        quick_sub: "Institutional approach: strategy, execution, reporting.",
+        q1_title: "Acquisition & analysis",
+        q1_sub: "Underwriting, structuring, efficient closing.",
+        q2_title: "Development",
+        q2_sub: "Planning, budgeting, vendors, controls.",
+        q3_title: "Asset management",
+        q3_sub: "Operations, CAPEX/OPEX, KPIs, optimization.",
+        q4_title: "Investor relations",
+        q4_sub: "Reporting, traceability, aligned interests.",
+        disclaimer_top: "Note: This website is for informational purposes and is not an offer of securities.",
+
+        about_title: "Company",
+        about_sub: "A platform to structure, execute, and scale real estate investments with governance.",
+        mission_title: "Mission",
+        mission_text: "Invest in real estate with strategic vision, building sustainable value through disciplined execution, operational control, and rigorous financial management.",
+        vision_title: "Vision",
+        vision_text: "Become a reference firm for process quality, transparency, and value creation in real estate—connecting partners and capital with purpose.",
+
+        services_title: "Services",
+        services_sub: "End-to-end support: from analysis to management and reporting.",
+        s1_title: "Portfolio Management",
+        s1_text: "Asset selection, diversification, metrics, and portfolio optimization.",
+        s2_title: "Investment Advisory",
+        s2_text: "Models, scenarios, sensitivity, capital structure, risk analysis.",
+        s3_title: "Asset Management",
+        s3_text: "Operations, KPIs, cost control, CAPEX/OPEX, continuous improvement.",
+        s4_title: "Acquisition & Close",
+        s4_text: "Due diligence, negotiation, legal coordination, efficient closing.",
+        s5_title: "Development",
+        s5_text: "Planning, budgeting, vendor selection, project controls.",
+        s6_title: "Reporting & Investor Relations",
+        s6_text: "Periodic reports, dashboards, traceability, investor transparency.",
+
+        strategy_title: "Investment strategy",
+        strategy_sub: "Clarity, control, and execution. Strategy adapts to the asset and market cycle.",
+        st1_title: "Asset thesis",
+        st1_text: "Location, demand, value drivers, exit plan, margin of safety.",
+        st2_title: "Structuring",
+        st2_text: "Equity, debt, timeline, contingencies, governance.",
+        st3_title: "Execution",
+        st3_text: "Operating plan, vendors, cost controls, progress tracking.",
+        st4_title: "Reporting",
+        st4_text: "KPIs, reporting cadence, traceability, investor communications.",
+
+        gov_title: "Governance",
+        gov_sub: "Best practices for order, compliance, and clarity for partners and investors.",
+        gov1_title: "Compliance & controls",
+        gov1_text: "Clear processes, documentation, segregation of duties, approvals.",
+        gov2_title: "Financial management",
+        gov2_text: "Budgets, OPEX/CAPEX control, KPI tracking, periodic reporting.",
+
+        contact_title: "Contact",
+        contact_sub: "Tell us what you need and we’ll respond with a clear executive approach.",
+        f_name: "Name",
+        f_email: "Email",
+        f_topic: "Topic",
+        opt1: "Investor / Partnership",
+        opt2: "Real estate project",
+        opt3: "Services / Advisory",
+        opt4: "Other",
+        f_msg: "Message",
+        send_email: "Send email",
+        call_now: "Call now",
+        contact_note: "*This form is informational. Use the email button for direct contact.",
+
+        direct_title: "Direct contact",
+        direct_sub: "Executive response by email. If you prefer a call, reach us by phone.",
+        phone_title: "Phone",
+        email_title: "Email",
+        entity_title: "Entity",
+        disclaimer_bottom: "Disclaimer: This information is general and does not constitute an offer, legal advice, or investment recommendation."
+      }
+    };
+
+    let lang = "es";
+    const applyI18n = () => {
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (dict[lang] && dict[lang][key] != null) el.innerHTML = dict[lang][key];
+      });
+      document.getElementById("langBtn").textContent = lang === "es" ? "ES / EN" : "EN / ES";
+      document.documentElement.lang = lang;
+    };
+
+    document.getElementById("langBtn").addEventListener("click", () => {
+      lang = (lang === "es") ? "en" : "es";
+      applyI18n();
+    });
+
+    applyI18n();
+  </script>
+</body>
+</html>
