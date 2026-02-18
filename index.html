@@ -27,7 +27,22 @@
       --radius: 18px;
       --max: 1120px;
     }
-
+.heroLogoWrap{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:14px;
+}
+.heroLogo{
+  width:92px;
+  height:92px;
+  border-radius:22px;
+  padding:10px;
+  object-fit:contain;
+  background: rgba(255,255,255,.04);
+  border:1px solid rgba(216,180,90,.22);
+  box-shadow: 0 18px 45px rgba(0,0,0,.40);
+}
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
@@ -123,6 +138,20 @@
       box-shadow: var(--shadow);
       overflow:hidden;
       position:relative;
+      .card.heroCard:after{
+  content:"";
+  position:absolute;
+  right:-80px;
+  bottom:-110px;
+  width:520px;
+  height:520px;
+  background-image: url("assets/logo-sembpc.png?v=1");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: .08;
+  transform: rotate(-8deg);
+  pointer-events:none;
+  filter: blur(.2px);
     }
     .cardInner{padding:26px}
 
@@ -348,6 +377,9 @@
       <div class="heroGrid">
         <div class="card">
           <div class="cardInner">
+            <div class="heroLogoWrap" aria-hidden="true">
+  <img class="heroLogo" src="assets/logo-sembpc.png?v=1" alt="" />
+</div>
             <div class="badge"><span class="dot"></span> <span data-i18n="hero_badge">Enfoque institucional, disciplina financiera y ejecución.</span></div>
 
             <h1 class="headline" data-i18n="hero_title">
